@@ -32,6 +32,8 @@ $routes->set404Override();
 $routes->get('/', 'Dashboard::index');
 $routes->get('/Dashboard', 'Dashboard::index');
 $routes->get('/K-Means', 'KMeans::index');
+$routes->post('/process-upload', 'KMeans::processUpload');
+$routes->get('/process-upload', 'KMeans::index');
 
 /*
  * --------------------------------------------------------------------

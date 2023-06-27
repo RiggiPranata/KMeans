@@ -8,12 +8,16 @@ class KMeans extends BaseController
 {
     protected $uri;
     protected $urisegments;
+    protected $clusters;
+    protected $clusterModel;
 
 
     public function __construct()
     {
         $this->uri = service('uri');
         $this->urisegments = $this->uri->getTotalSegments();
+        $this->clusterModel = new \App\Models\ClusterModel();
+        date_default_timezone_set('Asia/Jakarta');
     }
 
     public function index()
@@ -42,18 +46,49 @@ class KMeans extends BaseController
             // ...
 
             // Lakukan perhitungan k-means clustering
-            $clusters = $this->kMeansClustering($uploadedFile);
+            $this->clusters = $this->kMeansClustering($uploadedFile);
 
+            // dd($this->clusters);
             // Simpan hasil perhitungan ke database
-            $this->saveClustersToDatabase($clusters);
+            $this->saveClustersToDatabase($this->clusters);
+            $fileID = $this->clusterModel->orderBy('file_id', 'DESC')->limit(1)->findColumn('file_id');
 
+            // dd($fileID);
+            //query cluster
+            $c2 = $this->clusterModel->where('cluster', 2)->where('file_id', $fileID)->findColumn('kode_barang');
+            $c1 = $this->clusterModel->where('cluster', 1)->where('file_id', $fileID)->findColumn('kode_barang');
+            $c0 = $this->clusterModel->where('cluster', 0)->where('file_id', $fileID)->findColumn('kode_barang');
+            // dd($c2);
             // Tampilkan pesan sukses
-            $data['message'] = "File Excel berhasil diunggah dan diproses. Nama file: $fileName, Ukuran file: $fileSize bytes";
-            return view('upload_result', $data);
+            $data = [
+                'title' => "K-Means",
+                'message' => "File Excel berhasil diunggah dan diproses. Nama file: $fileName, Ukuran file: $fileSize bytes, dan waktu unggahan " . date('d-m-Y_h:i:s'),
+                'segment' => $this->urisegments,
+                'clusters' => $this->clusters,
+                'c0' => $c0,
+                'c1' => $c1,
+                'c2' => $c2,
+                'noRe' => "<script>
+                window.onbeforeunload = function() {
+                    return 'Apakah Anda yakin ingin meninggalkan halaman ini?';
+                };
+            </script>"
+            ];
+            echo view('kmeans_result', $data);
         } else {
             // Tampilkan pesan error
-            $data['error'] = "Terjadi kesalahan saat mengunggah file. Pastikan file yang diunggah adalah file Excel (format .xlsx)";
-            return view('upload_result', $data);
+            $data = [
+                'title' => "K-Means",
+                'message' => "Terjadi kesalahan saat mengunggah file. Pastikan file yang diunggah adalah file Excel (format .xlsx)",
+                'segment' => $this->urisegments,
+                'clusters' => $this->clusters,
+                'noRe' => "<script>
+                window.onbeforeunload = function() {
+                    return 'Apakah Anda yakin ingin meninggalkan halaman ini?';
+                };
+            </script>"
+            ];
+            echo view('kmeans_result', $data);
         }
     }
 
@@ -64,8 +99,10 @@ class KMeans extends BaseController
 
         // Ambil data dari sheet pertama (asumsi data berada pada sheet pertama)
         $sheet = $spreadsheet->getActiveSheet();
+        $sheet->removeRow(1);
         $data = $sheet->toArray();
 
+        // dd($data);
         // Inisialisasi jumlah cluster
         $numClusters = 3;
 
@@ -75,11 +112,11 @@ class KMeans extends BaseController
         // Inisialisasi variabel iterasi dan batas iterasi
         $iteration = 0;
         $maxIterations = 10;
-
+        // dd($data, $centroids);
         // Mulai iterasi perhitungan k-means clustering
         while ($iteration < $maxIterations) {
             $clusters = $this->assignDataToClusters($data, $centroids);
-            $newCentroids = $this->calculateNewCentroids($clusters);
+            $newCentroids = $this->calculateNewCentroids($clusters, $data);
 
             // Jika centroid tidak berubah, hentikan iterasi
             if ($centroids == $newCentroids) {
@@ -89,16 +126,18 @@ class KMeans extends BaseController
             $centroids = $newCentroids;
             $iteration++;
         }
-
+        // dd($clusters);
         // Masukkan informasi cluster ke dalam array hasil
         $result = [];
-        foreach ($data as $key => $row) {
-            $cluster = $clusters[$key];
+        // dd($clusters, $clusters[1]);
+        for ($i = 0; $i < count($data); $i++) {
+            $row = $data[$i];
             $result[] = [
+                'file_id' => date('d-m-Y_h:i:s') . $uploadedFile->getName(),
                 'kode_barang' => $row[0],
                 'jumlah_transaksi' => $row[1],
                 'volume_penjualan' => $row[2],
-                'cluster' => 'Cluster ' . $cluster
+                'cluster' =>  $clusters[$i]
             ];
         }
 
@@ -124,28 +163,30 @@ class KMeans extends BaseController
     {
         $clusters = [];
 
-        foreach ($data as $row) {
+        // Mengabaikan baris pertama yang berisi nama tabel/kolom
+        $startIndex = 0;
+
+        // Melakukan perhitungan jarak dan mengelompokkan data ke dalam cluster terdekat
+        for ($i = $startIndex; $i < count($data); $i++) {
             $minDistance = INF;
-            $clusterIndex = null;
+            $closestCentroid = -1;
 
-            // Menghitung jarak Euclidean antara data dengan setiap centroid
-            foreach ($centroids as $index => $centroid) {
-                $distance = sqrt(pow($row[1] - $centroid[0], 2) + pow($row[2] - $centroid[1], 2));
+            for ($j = 0; $j < count($centroids); $j++) {
+                $distance = sqrt(pow(($data[$i][1] - $centroids[$j][0]), 2) + pow(($data[$i][2] - $centroids[$j][1]), 2));
 
-                // Memilih centroid dengan jarak terdekat
                 if ($distance < $minDistance) {
                     $minDistance = $distance;
-                    $clusterIndex = $index;
+                    $closestCentroid = $j;
                 }
             }
 
-            $clusters[] = $clusterIndex;
+            $clusters[$i] = $closestCentroid;
         }
 
         return $clusters;
     }
 
-    private function calculateNewCentroids($clusters)
+    private function calculateNewCentroids($clusters, $data)
     {
         $newCentroids = [];
 
@@ -185,11 +226,10 @@ class KMeans extends BaseController
         // Sesuaikan dengan struktur database Anda
 
         // Menggunakan model ClusterModel sebagai contoh
-        $clusterModel = new \App\Models\ClusterModel();
 
         foreach ($clusters as $cluster) {
             // Simpan data cluster ke dalam tabel cluster_result
-            $clusterModel->insert($cluster);
+            $this->clusterModel->insert($cluster);
         }
     }
 }

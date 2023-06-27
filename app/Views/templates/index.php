@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- dropzonejs -->
     <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
+    <?php if (isset($noRe)) : ?>
+        <?= $noRe; ?>
+    <?php endif; ?>
+
 </head>
 <!--
 `body` tag options:

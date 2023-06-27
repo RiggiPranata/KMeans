@@ -1,0 +1,12 @@
+CRITICAL - 2023-06-28 00:09:39 --> Undefined variable: c0
+in APPPATH\Views\kmeans_result.php on line 13.
+ 1 APPPATH\Views\kmeans_result.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: c0', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 13, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(91): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
