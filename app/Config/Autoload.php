@@ -42,6 +42,7 @@ class Autoload extends AutoloadConfig
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
+        'PhpOffice\\PhpSpreadsheet' => VENDORPATH . 'phpoffice/phpspreadsheet/src/PhpSpreadsheet',
     ];
 
     /**
@@ -93,5 +94,5 @@ class Autoload extends AutoloadConfig
      * @var string[]
      * @phpstan-var list<string>
      */
-    public $helpers = ['auth'];
+    public $helpers = ['auth', 'upload', 'url', 'form'];
 }
