@@ -58,7 +58,17 @@ class KMeans extends BaseController
             $c2 = $this->clusterModel->where('cluster', 2)->where('file_id', $fileID)->findColumn('kode_barang');
             $c1 = $this->clusterModel->where('cluster', 1)->where('file_id', $fileID)->findColumn('kode_barang');
             $c0 = $this->clusterModel->where('cluster', 0)->where('file_id', $fileID)->findColumn('kode_barang');
-            // dd($c2);
+            if ($c0 == null) {
+                $c0 = 'Tidak ada data yang memenuhi';
+            }
+            if ($c1 == null) {
+                $c1 = 'Tidak ada data yang memenuhi';
+            }
+            if ($c2 == null) {
+                $c2 = 'Tidak ada data yang memenuhi';
+            }
+            // dd($c0, $c1, $c2);
+
             // Tampilkan pesan sukses
             $data = [
                 'title' => "K-Means",

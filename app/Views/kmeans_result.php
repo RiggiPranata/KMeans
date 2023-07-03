@@ -20,10 +20,15 @@
                             <?php foreach ($c1 as $l) : ?>
                                 <?= $l; ?>,
                             <?php endforeach; ?>
-                            <p class="mb-0">Produk paling laris : </p>
-                            <?php foreach ($c2 as $pl) : ?>
-                                <?= $pl; ?>,
-                            <?php endforeach; ?>
+                            <?php if (is_array($c2) || is_object($c2)) : ?>
+                                <p class="mb-0">Produk paling laris : </p>
+                                <?php foreach ($c2 as $pl) : ?>
+                                    <?= $pl; ?>,
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <p class="mb-0">Produk paling laris : </p>
+                                <p class="mb-0">Tidak ada data yang memenuhi</p>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </div>
                     <div class="card-body">

@@ -1,0 +1,87 @@
+INFO - 2023-07-03 13:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:24:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-03 20:26:34 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 20.
+ 1 APPPATH\Views\kmeans_result.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 20, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(77): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-03 13:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-03 20:30:47 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 24.
+ 1 APPPATH\Views\kmeans_result.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 24, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(77): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-03 13:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-03 20:32:40 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 24.
+ 1 APPPATH\Views\kmeans_result.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 24, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(77): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-03 13:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-03 20:37:44 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 20.
+ 1 APPPATH\Views\kmeans_result.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 20, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(87): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-03 13:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:39:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-03 20:45:34 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 24.
+ 1 APPPATH\Views\kmeans_result.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 24, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(87): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-03 13:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-03 13:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
