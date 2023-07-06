@@ -1,0 +1,732 @@
+INFO - 2023-07-06 11:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:00:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:06:16 --> Column string index can not be longer than 3 characters
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php on line 314.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2616): PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString('kode_barang')
+ 2 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('kode_barang', 1)
+ 3 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:07:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:07:09 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B', 1)
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:07:24 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:07:57 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:08:07 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:08:52 --> Columns to be deleted should at least start from column A (1)
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php on line 2676.
+ 1 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumnByIndex(0)
+ 2 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:09:06 --> Columns to be deleted should at least start from column A (1)
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php on line 2676.
+ 1 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumnByIndex(0)
+ 2 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:09:50 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2673): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B', 1)
+ 4 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumnByIndex(1)
+ 5 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:10:11 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:10:43 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2673): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B', 1)
+ 4 APPPATH\Controllers\KMeans.php(114): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumnByIndex(1)
+ 5 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:15:34 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit(1, 'n')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B', 1)
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:16:24 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(111): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B', 1)
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:20:35 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(111): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B', 1)
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:24:06 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(112): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:24:13 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(112): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:24:20 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(112): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:25:40 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(113): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:25:48 --> Call to a member function get() on null
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Cell.php on line 312.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\ReferenceHelper.php(456): PhpOffice\PhpSpreadsheet\Cell\Cell->setValueExplicit('total_transaksi', 's')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(2622): PhpOffice\PhpSpreadsheet\ReferenceHelper->insertNewBefore('B1', -1, 0, Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+ 3 APPPATH\Controllers\KMeans.php(112): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->removeColumn('B')
+ 4 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:37:02 --> Undefined offset: 2
+in APPPATH\Controllers\KMeans.php on line 174.
+ 1 APPPATH\Controllers\KMeans.php(174): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 174, [...])
+ 2 APPPATH\Controllers\KMeans.php(128): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:37:33 --> Undefined offset: 2
+in APPPATH\Controllers\KMeans.php on line 193.
+ 1 APPPATH\Controllers\KMeans.php(193): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 193, [...])
+ 2 APPPATH\Controllers\KMeans.php(136): App\Controllers\KMeans->assignDataToClusters([...], [...])
+ 3 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:37:58 --> Undefined offset: 2
+in APPPATH\Controllers\KMeans.php on line 216.
+ 1 APPPATH\Controllers\KMeans.php(216): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 216, [...])
+ 2 APPPATH\Controllers\KMeans.php(137): App\Controllers\KMeans->calculateNewCentroids([...], [...])
+ 3 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:38:17 --> Undefined offset: 2
+in APPPATH\Controllers\KMeans.php on line 157.
+ 1 APPPATH\Controllers\KMeans.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 157, [...])
+ 2 APPPATH\Controllers\KMeans.php(49): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:38:35 --> Undefined index: kode_barang
+in APPPATH\Views\kmeans_result.php on line 48.
+ 1 APPPATH\Views\kmeans_result.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: kode_barang', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 48, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(87): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:42:56 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 16.
+ 1 APPPATH\Views\kmeans_result.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 16, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(87): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 19:44:02 --> Invalid argument supplied for foreach()
+in APPPATH\Views\kmeans_result.php on line 26.
+ 1 APPPATH\Views\kmeans_result.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(87): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 12:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:55:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 12:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 20:19:59 --> Array to string conversion
+in APPPATH\Views\kmeans_result.php on line 16.
+ 1 APPPATH\Views\kmeans_result.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 16, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(98): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 13:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 20:20:30 --> Array to string conversion
+in APPPATH\Views\kmeans_result.php on line 16.
+ 1 APPPATH\Views\kmeans_result.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 16, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(98): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 13:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 20:20:49 --> Undefined offset: 0
+in APPPATH\Views\kmeans_result.php on line 16.
+ 1 APPPATH\Views\kmeans_result.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 16, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(98): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 13:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 20:22:14 --> Trying to get property 'kode_barang' of non-object
+in APPPATH\Views\kmeans_result.php on line 16.
+ 1 APPPATH\Views\kmeans_result.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'kode_barang\' of non-object', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 16, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(98): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 13:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 20:23:23 --> Array to string conversion
+in APPPATH\Views\kmeans_result.php on line 25.
+ 1 APPPATH\Views\kmeans_result.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php', 25, [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\KMeans\\app\\Views\\kmeans_result.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('kmeans_result', [], true)
+ 5 APPPATH\Controllers\KMeans.php(98): view('kmeans_result', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 13:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 13:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 21:11:31 --> Division by zero
+in APPPATH\Controllers\KMeans.php on line 263.
+ 1 APPPATH\Controllers\KMeans.php(263): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Division by zero', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 263, [...])
+ 2 APPPATH\Controllers\KMeans.php(155): App\Controllers\KMeans->calculateNewCentroids([...], [...])
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 14:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:36:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:52:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 21:57:00 --> Undefined index: jumlah_transaksi
+in APPPATH\Controllers\KMeans.php on line 214.
+ 1 APPPATH\Controllers\KMeans.php(214): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: jumlah_transaksi', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 214, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 14:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 21:57:29 --> Undefined offset: 1
+in APPPATH\Controllers\KMeans.php on line 214.
+ 1 APPPATH\Controllers\KMeans.php(214): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 214, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 14:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 21:58:44 --> Undefined offset: 1
+in APPPATH\Controllers\KMeans.php on line 214.
+ 1 APPPATH\Controllers\KMeans.php(214): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 214, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 14:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 14:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:00:28 --> Undefined offset: 1
+in APPPATH\Controllers\KMeans.php on line 213.
+ 1 APPPATH\Controllers\KMeans.php(213): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 213, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:03:04 --> Undefined offset: 1
+in APPPATH\Controllers\KMeans.php on line 213.
+ 1 APPPATH\Controllers\KMeans.php(213): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 213, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:05:25 --> Undefined index: jumlah_transaksi
+in APPPATH\Controllers\KMeans.php on line 213.
+ 1 APPPATH\Controllers\KMeans.php(213): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: jumlah_transaksi', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 213, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:06:23 --> Undefined index: jumlah_transaksi
+in APPPATH\Controllers\KMeans.php on line 204.
+ 1 APPPATH\Controllers\KMeans.php(204): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: jumlah_transaksi', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 204, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:08:15 --> Illegal offset type
+in APPPATH\Controllers\KMeans.php on line 207.
+ 1 APPPATH\Controllers\KMeans.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal offset type', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 207, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:09:48 --> Illegal offset type
+in APPPATH\Controllers\KMeans.php on line 207.
+ 1 APPPATH\Controllers\KMeans.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal offset type', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 207, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:10:22 --> Illegal offset type
+in APPPATH\Controllers\KMeans.php on line 207.
+ 1 APPPATH\Controllers\KMeans.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal offset type', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 207, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:11:35 --> Undefined offset: 1
+in APPPATH\Controllers\KMeans.php on line 214.
+ 1 APPPATH\Controllers\KMeans.php(214): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 214, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:11:43 --> Undefined offset: 1
+in APPPATH\Controllers\KMeans.php on line 214.
+ 1 APPPATH\Controllers\KMeans.php(214): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 214, [...])
+ 2 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:19:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 22:20:45 --> Undefined index: jumlah_transaksi
+in APPPATH\Controllers\KMeans.php on line 201.
+ 1 APPPATH\Controllers\KMeans.php(201): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: jumlah_transaksi', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 201, [...])
+ 2 [internal function]: App\Controllers\KMeans->App\Controllers\{closure}([...], [...])
+ 3 APPPATH\Controllers\KMeans.php(202): usort([...], Object(Closure))
+ 4 APPPATH\Controllers\KMeans.php(146): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 5 APPPATH\Controllers\KMeans.php(53): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-06 15:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:46:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:50:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:51:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 15:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:00:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:00:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 23:29:43 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes)
+in VENDORPATH\kint-php\kint\src\Parser\Parser.php on line 362.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-07-06 16:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-06 23:30:39 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes)
+in VENDORPATH\kint-php\kint\src\Zval\Value.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-07-06 16:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 16:44:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 17:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 17:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-06 17:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

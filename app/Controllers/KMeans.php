@@ -3,17 +3,21 @@
 namespace App\Controllers;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PHPUnit\Framework\Constraint\IsEqual;
 
 class KMeans extends BaseController
 {
     protected $uri;
     protected $urisegments;
+    protected $builder;
     protected $clusters;
     protected $clusterModel;
 
 
     public function __construct()
     {
+        $db      = \Config\Database::connect();
+        $this->builder = $db->table('clusters');
         $this->uri = service('uri');
         $this->urisegments = $this->uri->getTotalSegments();
         $this->clusterModel = new \App\Models\ClusterModel();
@@ -53,8 +57,13 @@ class KMeans extends BaseController
             $this->saveClustersToDatabase($this->clusters);
             $fileID = $this->clusterModel->orderBy('file_id', 'DESC')->limit(1)->findColumn('file_id');
 
+            //query count kode_barang in cluster
+            $c2c = $this->builder->selectCount('kode_barang')->where('file_id', $fileID)->where('cluster', 2)->get()->getResultArray();
+            $c1c = $this->builder->selectCount('kode_barang')->where('file_id', $fileID)->where('cluster', 1)->get()->getResultArray();
+            $c0c = $this->builder->selectCount('kode_barang')->where('file_id', $fileID)->where('cluster', 0)->get()->getResultArray();
+
             // dd($fileID);
-            //query cluster
+            //query cluster kode_barang
             $c2 = $this->clusterModel->where('cluster', 2)->where('file_id', $fileID)->findColumn('kode_barang');
             $c1 = $this->clusterModel->where('cluster', 1)->where('file_id', $fileID)->findColumn('kode_barang');
             $c0 = $this->clusterModel->where('cluster', 0)->where('file_id', $fileID)->findColumn('kode_barang');
@@ -67,7 +76,7 @@ class KMeans extends BaseController
             if ($c2 == null) {
                 $c2 = 'Tidak ada data yang memenuhi';
             }
-            // dd($c0, $c1, $c2);
+            // dd($c0c, $c1c, $c2c);
 
             // Tampilkan pesan sukses
             $data = [
@@ -78,6 +87,9 @@ class KMeans extends BaseController
                 'c0' => $c0,
                 'c1' => $c1,
                 'c2' => $c2,
+                'c0c' => $c0c,
+                'c1c' => $c1c,
+                'c2c' => $c2c,
                 'noRe' => "<script>
                 window.onbeforeunload = function() {
                     return 'Apakah Anda yakin ingin meninggalkan halaman ini?';
@@ -110,9 +122,23 @@ class KMeans extends BaseController
         // Ambil data dari sheet pertama (asumsi data berada pada sheet pertama)
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->removeRow(1);
-        $data = $sheet->toArray();
+        $exl = $sheet->toArray();
 
-        // dd($data);
+        // Filter data hanya untuk kolom 'jumlah_transaksi' dan 'volume_penjualan'
+        $data = array_map(function ($row) {
+            return [
+                $row[1],
+                $row[2]
+            ];
+        }, $exl);
+
+        $kodeBarang = array_map(function ($row) {
+            return [
+                $row[0]
+            ];
+        }, $exl);
+
+        // dd($kodeBarang);
         // Inisialisasi jumlah cluster
         $numClusters = 3;
 
@@ -122,31 +148,33 @@ class KMeans extends BaseController
         // Inisialisasi variabel iterasi dan batas iterasi
         $iteration = 0;
         $maxIterations = 10;
+        $tempResult = [];
         // dd($data, $centroids);
         // Mulai iterasi perhitungan k-means clustering
         while ($iteration < $maxIterations) {
             $clusters = $this->assignDataToClusters($data, $centroids);
             $newCentroids = $this->calculateNewCentroids($clusters, $data);
-
             // Jika centroid tidak berubah, hentikan iterasi
-            if ($centroids == $newCentroids) {
+            if ($this->isEqual($centroids, $newCentroids)) {
+
                 break;
             }
 
             $centroids = $newCentroids;
             $iteration++;
         }
-        // dd($clusters);
+
         // Masukkan informasi cluster ke dalam array hasil
         $result = [];
         // dd($clusters, $clusters[1]);
         for ($i = 0; $i < count($data); $i++) {
+            $kb = $kodeBarang[$i];
             $row = $data[$i];
             $result[] = [
                 'file_id' => date('d-m-Y_h:i:s') . $uploadedFile->getName(),
-                'kode_barang' => $row[0],
-                'jumlah_transaksi' => $row[1],
-                'volume_penjualan' => $row[2],
+                'kode_barang' => $kb[0],
+                'jumlah_transaksi' => $row[0],
+                'volume_penjualan' => $row[1],
                 'cluster' =>  $clusters[$i]
             ];
         }
@@ -156,16 +184,58 @@ class KMeans extends BaseController
 
     private function initializeCentroids($data, $numClusters)
     {
+        // $centroids = [];
+
+        // // Mengacak data untuk memilih centroid awal secara acak
+        // shuffle($data);
+
+        // // Mengambil $numClusters data pertama sebagai centroid awal
+        // for ($i = 0; $i < $numClusters; $i++) {
+
+        //     $centroids[] = [$data[$i][0], $data[$i][1]];
+        // }
+
+        // return $centroids;
+
+        // $centroids = [];
+
+        // // Mengacak data untuk memilih centroid awal secara acak
+        // shuffle($data);
+
+        // // Mengambil $numClusters data pertama sebagai centroid awal
+        // $selectedIndices = array_rand($data, $numClusters);
+        // $selectedData = array_intersect_key($data, array_flip($selectedIndices));
+
+        // // Memastikan tidak ada nilai centroid yang sama
+        // $uniqueData = array_values(array_unique($selectedData, SORT_REGULAR));
+
+
+        // foreach ($uniqueData as $row) {
+        //     $centroids[] = [$row[0], $row[1]];
+        // }
+        // dd($centroids);
+        // return $centroids;
+
         $centroids = [];
 
-        // Mengacak data untuk memilih centroid awal secara acak
-        shuffle($data);
+        // Mendapatkan data unik untuk kolom 'jumlah_transaksi'
+        $uniqueJumlahTransaksi = array_unique(array_column($data, 0));
 
-        // Mengambil $numClusters data pertama sebagai centroid awal
-        for ($i = 0; $i < $numClusters; $i++) {
-            $centroids[] = [$data[$i][1], $data[$i][2]];
+        // Mengambil 3 nilai unik terbesar dari 'jumlah_transaksi'
+        sort($uniqueJumlahTransaksi);
+        shuffle($uniqueJumlahTransaksi);
+        $selectedJumlahTransaksi = array_slice($uniqueJumlahTransaksi, 4, $numClusters);
+
+        // Mengambil data dengan nilai 'jumlah_transaksi' yang sesuai
+        foreach ($data as $row) {
+            if (in_array($row[0], $selectedJumlahTransaksi)) {
+                $centroids[] = [$row[0], $row[1]];
+            }
+            $jml = count($centroids);
+            if ($jml == 3) {
+                break;
+            }
         }
-
         return $centroids;
     }
 
@@ -182,7 +252,7 @@ class KMeans extends BaseController
             $closestCentroid = -1;
 
             for ($j = 0; $j < count($centroids); $j++) {
-                $distance = sqrt(pow(($data[$i][1] - $centroids[$j][0]), 2) + pow(($data[$i][2] - $centroids[$j][1]), 2));
+                $distance = sqrt(pow(($data[$i][0] - $centroids[$j][0]), 2) + pow(($data[$i][1] - $centroids[$j][1]), 2));
 
                 if ($distance < $minDistance) {
                     $minDistance = $distance;
@@ -204,8 +274,8 @@ class KMeans extends BaseController
         $clusterData = [];
         foreach ($clusters as $index => $cluster) {
             $clusterData[$cluster][] = [
-                'jumlah_transaksi' => $data[$index][1],
-                'volume_penjualan' => $data[$index][2]
+                'jumlah_transaksi' => $data[$index][0],
+                'volume_penjualan' => $data[$index][1]
             ];
         }
 
@@ -233,13 +303,26 @@ class KMeans extends BaseController
     private function saveClustersToDatabase($clusters)
     {
         // Simpan hasil perhitungan ke dalam database
-        // Sesuaikan dengan struktur database Anda
-
-        // Menggunakan model ClusterModel sebagai contoh
 
         foreach ($clusters as $cluster) {
             // Simpan data cluster ke dalam tabel cluster_result
             $this->clusterModel->insert($cluster);
         }
+    }
+
+
+    private function isEqual($centroids1, $centroids2)
+    {
+        // Memeriksa apakah kedua centroid identik
+        for ($i = 0; $i < count($centroids1); $i++) {
+            if (
+                $centroids1[$i][0] != $centroids2[$i][0] ||
+                $centroids1[$i][1] != $centroids2[$i][1]
+            ) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

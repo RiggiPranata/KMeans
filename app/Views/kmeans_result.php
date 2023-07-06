@@ -12,16 +12,26 @@
                         <?php if ($message == "Terjadi kesalahan saat mengunggah file. Pastikan file yang diunggah adalah file Excel (format .xlsx)") : ?>
 
                         <?php else : ?>
-                            <p class="mb-0">Produk kurang laris : </p>
-                            <?php foreach ($c0 as $kl) : ?>
-                                <?= $kl; ?>,
-                            <?php endforeach; ?>
-                            <p class="mb-0">Produk laris : </p>
-                            <?php foreach ($c1 as $l) : ?>
-                                <?= $l; ?>,
-                            <?php endforeach; ?>
+                            <?php if (is_array($c0) || is_object($c0)) : ?>
+                                <p class="mb-0">Produk kurang laris : <?= $c0c[0]['kode_barang']; ?></p>
+                                <?php foreach ($c0 as $kl) : ?>
+                                    <?= $kl; ?>,
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <p class="mb-0">Produk kurang laris : </p>
+                                <p class="mb-0">Tidak ada data yang memenuhi</p>
+                            <?php endif; ?>
+                            <?php if (is_array($c1) || is_object($c1)) : ?>
+                                <p class="mb-0">Produk laris : <?= $c1c[0]['kode_barang']; ?></p>
+                                <?php foreach ($c1 as $l) : ?>
+                                    <?= $l; ?>,
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <p class="mb-0">Produk laris : </p>
+                                <p class="mb-0">Tidak ada data yang memenuhi</p>
+                            <?php endif; ?>
                             <?php if (is_array($c2) || is_object($c2)) : ?>
-                                <p class="mb-0">Produk paling laris : </p>
+                                <p class="mb-0">Produk paling laris : <?= $c2c[0]['kode_barang']; ?></p>
                                 <?php foreach ($c2 as $pl) : ?>
                                     <?= $pl; ?>,
                                 <?php endforeach; ?>
