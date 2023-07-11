@@ -125,132 +125,95 @@
     <script>
         var hasil
         $(function() {
-            var file = $('#fileId').val();
-            $('#fileId').on('change', function() {
-                $.ajax({
-                    contentType: JSON,
-                    url: "/clustering/" + file + "",
-                    type: 'post',
-                    success: function(result) {
-                        hasil = result
-                    }
-
-                });
-            });
-            $('#fileId').on('load', function() {
-                $.ajax({
-                    url: "/clustering/" + file + "",
-                    type: 'post',
-                    success: function(result) {
-                        hasil = result
-                    }
-
-                });
-            });
-            // Get context with jQuery - using jQuery's .get() method.
-
-            var ticksStyle = {
-                fontColor: '#495057',
-                fontStyle: 'bold'
-            }
-
-            var mode = 'index'
-            var intersect = true
-
-
-
-            var $visitorsChart = $('#visitors-chart')
-            // eslint-disable-next-line no-unused-vars
-            var visitorsChart = new Chart($visitorsChart, {
+            // Inisialisasi chart dan konfigurasi
+            var ctx = document.getElementById('visitors-chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bubble',
                 data: {
-                    labels: [
-                        <?php foreach ($jumlah_transaksi as $jt) : ?>
-                            <?= $jt['jumlah_transaksi']; ?>,
-                        <?php endforeach; ?>
-                    ],
-                    datasets: [
-                        // {
-                        //     type: 'bubble',
-                        //     data: [
-                        //         <?php foreach ($jumlah_transaksi as $jt) : ?>
-                        //             <?= $jt['jumlah_transaksi']; ?>,
-                        //         <?php endforeach; ?>
-                        //     ],
-                        //     backgroundColor: '#007bff',
-                        //     // borderColor: '#007bff',
-                        //     // pointBorderColor: '#007bff',
-                        //     // pointBackgroundColor: '#007bff',
-                        //     fill: true
-                        //     // pointHoverBackgroundColor: '#007bff',
-                        //     // pointHoverBorderColor    : '#007bff'
-                        // },
-                        {
-                            type: 'bubble',
-                            data: [
-                                <?php foreach ($volume_penjualan as $vp) : ?>
-                                    <?= $vp['volume_penjualan']; ?>,
-                                <?php endforeach; ?>
-                            ],
-                            backgroundColor: '#00FF00',
-                            // borderColor: '#007bff',
-                            // pointBorderColor: '#007bff',
-                            // pointBackgroundColor: '#007bff',
-                            fill: true
-                            // pointHoverBackgroundColor: '#ced4da',
-                            // pointHoverBorderColor    : '#ced4da'
-                        },
-                        //  {
-                        //     type: 'bubble',
-                        //     data: [100, 67, 80, 77, 67, 80, 77],
-                        //     backgroundColor: '#6F11F7',
-                        //     // borderColor: '#007bff',
-                        //     // pointBorderColor: '#007bff',
-                        //     // pointBackgroundColor: '#007bff',
-                        //     fill: true
-                        //     // pointHoverBackgroundColor: '#ced4da',
-                        //     // pointHoverBorderColor    : '#ced4da'
-                        // }
-                    ]
+                    datasets: [{
+                        label: 'Data',
+                        data: [],
+                        // backgroundColor: []
+
+                    }]
                 },
                 options: {
-                    maintainAspectRatio: true,
-                    tooltips: {
-                        mode: mode,
-                        intersect: intersect
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
                     },
-                    hover: {
-                        mode: mode,
-                        intersect: intersect
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Value: ' + context.parsed.x;
+                                }
+                            }
+                        }
                     },
                     legend: {
-                        display: false
+                        display: false // Nonaktifkan legend
                     },
-                    scales: {
-                        yAxes: [{
-                            gridLines: {
-                                display: true,
-                                lineWidth: '4px',
-                                color: 'rgba(0, 0, 0, .2)',
-                                zeroLineColor: '#00000'
-                            },
-                            ticks: $.extend({
-                                beginAtZero: true,
-                                suggestedMax: 140
-                            }, ticksStyle)
-                        }],
-                        xAxes: [{
-                            // display: true,
-                            gridLines: {
-                                display: true,
-                                lineWidth: '4px',
-                                color: 'rgba(0, 0, .2, .2)',
-                                zeroLineColor: '#00000'
-                            },
-                            ticks: ticksStyle,
-                        }]
-                    }
                 }
-            })
+            });
+
+            // Event listener untuk perubahan pilihan jenis file
+            $(document).ready(function() {
+                $('#fileId').change(function() {
+                    var fileType = $(this).val();
+                    updateChart(fileType);
+                });
+            });
+
+            // Mendapatkan data dari server dan mengupdate chart
+            function updateChart(fileType) {
+                $.ajax({
+                    url: '<?php echo base_url("/clustering"); ?>',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        fileType: fileType
+                    },
+                    success: function(response) {
+                        // Menyiapkan array untuk data dan backgroundColor
+                        var chartData = [];
+                        var chartBackgroundColor = [];
+
+                        // Mengisi array chartData dan chartBackgroundColor dengan data yang sesuai
+                        response.forEach(function(item) {
+                            chartData.push({
+                                x: item.x,
+                                y: item.y,
+                                r: item.r
+                            });
+                            chartBackgroundColor.push(item.backgroundColor);
+                        });
+
+                        // Memperbarui data dan warna pada chart
+                        chart.data.datasets[0].data = chartData;
+                        chart.data.datasets[0].backgroundColor = chartBackgroundColor;
+                        // // chart.data.datasets[0].data = response;
+                        chart.update();
+                        // Memperbarui data dan warna pada chart
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+
+
+
+            // Pertama kali, memuat data untuk jenis file default
+            var defaultFileType = $('#fileId').val();
+            updateChart(defaultFileType);
+
 
             $('#example2').DataTable({
                 "paging": true,

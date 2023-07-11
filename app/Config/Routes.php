@@ -34,7 +34,7 @@ $routes->get('/Dashboard', 'Dashboard::index');
 $routes->get('/K-Means', 'KMeans::index');
 $routes->post('/process-upload', 'KMeans::processUpload');
 $routes->get('/process-upload', 'KMeans::index');
-$routes->post('/clustering/(:any)', 'Dashboard::graphCluster/$1');
+$routes->post('/clustering', 'Dashboard::graphCluster');
 
 /*
  * --------------------------------------------------------------------

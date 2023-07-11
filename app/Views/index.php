@@ -8,13 +8,13 @@
                 <div class="card">
                     <div class="card-header border-0">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Online Store Visitors</h3>
+                            <h3 class="card-title">K-Means visualisasion</h3>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="d-flex">
                             <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">820 <span>Data</span></span>
+                                <span class="text-bold text-lg">175 <span>Data</span></span>
                                 <span>Clustering</span>
                             </p>
                             <div class="ml-auto d-flex flex-column">
@@ -34,14 +34,13 @@
 
                         <div class="d-flex flex-row justify-content-end">
                             <span class="mr-4">
-                                <i class="fas fa-square text-primary"></i>Cluster 0<br>Kurang Laris
+                                <i class="fas fa-square" style="color: rgba(70, 164, 211, 5);"></i>Cluster 0<br>Kurang Laris
                             </span>
                             <span class="mr-4   ">
-                                <i class="fas fa-square text-primary"></i>Cluster 1<br>Laris
+                                <i class="fas fa-square" style="color: rgba(10, 210, 129, 2);"></i>Cluster 1<br>Laris
                             </span>
-
                             <span>
-                                <i class="fas fa-square text-gray"></i>Cluster 2<br>Paling Laris
+                                <i class="fas fa-square" style="color: rgba(255, 69, 0, 1.0);"></i>Cluster 2<br>Paling Laris
                             </span>
                         </div>
                     </div>

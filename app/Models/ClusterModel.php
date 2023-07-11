@@ -29,4 +29,14 @@ class ClusterModel extends Model
 
         return $data;
     }
+
+    public function getDataByFileType($fileType)
+    {
+        // Query data dari database berdasarkan jenis file
+        $query = $this->select('jumlah_transaksi, volume_penjualan, cluster')
+            ->where('file_id', $fileType)
+            ->findAll();
+
+        return $query;
+    }
 }
