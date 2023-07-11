@@ -57,6 +57,8 @@ class KMeans extends BaseController
             $this->saveClustersToDatabase($this->clusters);
             $fileID = $this->clusterModel->orderBy('file_id', 'DESC')->limit(1)->findColumn('file_id');
 
+
+
             //query count kode_barang in cluster
             $c2c = $this->builder->selectCount('kode_barang')->where('file_id', $fileID)->where('cluster', 2)->get()->getResultArray();
             $c1c = $this->builder->selectCount('kode_barang')->where('file_id', $fileID)->where('cluster', 1)->get()->getResultArray();
@@ -148,7 +150,7 @@ class KMeans extends BaseController
         // Inisialisasi variabel iterasi dan batas iterasi
         $iteration = 0;
         $maxIterations = 10;
-        $tempResult = [];
+
         // dd($data, $centroids);
         // Mulai iterasi perhitungan k-means clustering
         while ($iteration < $maxIterations) {

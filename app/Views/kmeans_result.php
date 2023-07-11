@@ -43,7 +43,7 @@
                     </div>
                     <div class="card-body">
                         <?php if (isset($clusters) && !empty($clusters)) : ?>
-                            <table class="table">
+                            <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Kode Barang</th>
