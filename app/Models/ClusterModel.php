@@ -11,24 +11,32 @@ class ClusterModel extends Model
     protected $allowedFields = ['kode_barang', 'file_id', 'jumlah_transaksi', 'volume_penjualan', 'cluster'];
 
 
-    public function graphJT($fileID)
+    public function countData($fileID)
     {
-        $data = $this->select('DISTINCT(jumlah_transaksi)')->where('file_id', $fileID)->orderBy('jumlah_transaksi', "ASC")->findAll();
+        $data = $this->select('COUNT(kode_barang) as length')->where('file_id', $fileID)->findAll();
 
         return $data;
     }
-    public function graphVP($fileID)
+    public function kode_barang($fileID)
     {
-        $data = $this->select('volume_penjualan')->where('file_id', $fileID)->findAll();
+        $data = $this->select('kode_barang')->where('file_id', $fileID)->findAll();
 
         return $data;
     }
-    public function graphCL($fileID)
+    public function cluster($fileID)
     {
         $data = $this->select('cluster')->where('file_id', $fileID)->findAll();
 
         return $data;
     }
+
+    public function countCluster($fileID, $c)
+    {
+        $data = $this->select('COUNT(cluster) as cluster')->where('file_id', $fileID)->where('cluster', $c)->findAll();
+
+        return $data;
+    }
+
 
     public function getDataByFileType($fileType)
     {

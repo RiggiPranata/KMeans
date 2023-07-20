@@ -35,6 +35,8 @@ $routes->get('/K-Means', 'KMeans::index');
 $routes->post('/process-upload', 'KMeans::processUpload');
 $routes->get('/process-upload', 'KMeans::index');
 $routes->post('/clustering', 'Dashboard::graphCluster');
+$routes->get('/Profile', 'User::index');
+$routes->get('/Reset', 'Myth\Auth\Controllers\AuthController::resetPassword');
 
 /*
  * --------------------------------------------------------------------

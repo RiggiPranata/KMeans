@@ -8,6 +8,7 @@ class Dashboard extends BaseController
     protected $urisegments;
     protected $builder;
     protected $kmeans;
+    protected $barang;
 
     public function __construct()
     {
@@ -15,25 +16,23 @@ class Dashboard extends BaseController
         $this->urisegments = $this->uri->getTotalSegments();
         $db      = \Config\Database::connect();
         $this->builder = $db->table('clusters');
+        $this->barang = $db->table('barang');
         $this->kmeans = new \App\Models\ClusterModel();
     }
 
     public function index()
     {
-        $fileID = '06-07-2023_11:44:04dataset_kcs.xlsx';
         $allFile = $this->builder->distinct(true)->select('file_id')->get()->getResultArray();
-        $jumlahTransaksi = $this->kmeans->graphJT($fileID);
-        $volumePenjualan = $this->kmeans->graphVP($fileID);
-        $cluster = $this->kmeans->graphCL($fileID);
+        // $cluster = $this->kmeans->graphCL($fileID);
         // dd($allfiles);
         $data = [
             'config' => config('Auth'),
             'title' => 'Dasboard',
             'segment' => $this->urisegments,
             'file' => $allFile,
-            'jumlah_transaksi' => $jumlahTransaksi,
-            'volume_penjualan' => $volumePenjualan,
-            'cluster' => $cluster,
+            // 'jumlah_transaksi' => $jumlahTransaksi,
+            // 'volume_penjualan' => $volumePenjualan,
+            // 'cluster' => $cluster,
         ];
         return view('index', $data);
     }
@@ -45,6 +44,8 @@ class Dashboard extends BaseController
         // dd($jumlahTransaksi, $volumePenjualan, $cluster);
         $data = $this->kmeans->getDataByFileType($fileID);
 
+        $query = $this->barang->select('nama')->join('clusters', 'clusters.kode_barang = barang.kode_barang', 'inner')->get();
+
         // Format data sesuai dengan format Bubble Chart
         $formattedData = [];
         foreach ($data as $row) {
@@ -52,12 +53,19 @@ class Dashboard extends BaseController
                 'x' => $row['jumlah_transaksi'],
                 'y' => $row['volume_penjualan'], // Nilai Y dapat diganti dengan data yang relevan
                 'backgroundColor' => $this->getColorByCluster($row['cluster']),
-                // 'radius' => 10,
+                'dataLength' => $this->kmeans->countData($fileID),
+                'kode_barang' => $this->kmeans->kode_barang($fileID),
+                'nama_barang' => $query->getResultArray(),
+                'cluster' => $this->kmeans->cluster($fileID),
+                'c0' => $this->kmeans->countCluster($fileID, 0),
+                'c1' => $this->kmeans->countCluster($fileID, 1),
+                'c2' => $this->kmeans->countCluster($fileID, 2),
             ];
         }
         // d($formattedData['backgroundColor']);
         return $this->response->setJSON($formattedData);
     }
+
 
     private function getColorByCluster($cluster)
     {

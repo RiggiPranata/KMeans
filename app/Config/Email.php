@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use CodeIgniter\MyNamespace;
 use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig

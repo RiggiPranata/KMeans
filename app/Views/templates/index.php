@@ -22,10 +22,36 @@
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
-    <?php if (isset($noRe)) : ?>
+    <?php
+
+    use Myth\Auth\Entities\User;
+
+    if (isset($noRe)) : ?>
         <?= $noRe; ?>
     <?php endif; ?>
 
+    <style>
+        .dataTables_length {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .dataTables_filter {
+            margin-right: 20px;
+        }
+
+        .dataTables_info {
+            margin-left: 20px;
+            margin-bottom: 10px;
+
+
+
+        }
+
+        .fa-user-circle {
+            <?= (User()->activate()) ? 'color: #00FE00; ' : 'color: red;'; ?>
+        }
+    </style>
 </head>
 <!--
 `body` tag options:
@@ -124,6 +150,8 @@
     <!-- ADDING  NEW -->
     <script>
         var hasil
+        var data = [];
+        var donutData = {};
         $(function() {
             // Inisialisasi chart dan konfigurasi
             var ctx = document.getElementById('visitors-chart').getContext('2d');
@@ -193,11 +221,95 @@
                             });
                             chartBackgroundColor.push(item.backgroundColor);
                         });
+                        // jumlah data
+                        $('#countData').append(response[0].dataLength[0].length);
+                        // jumlah data perklaster
+                        c0 = response[0].c0[0].cluster;
+                        c1 = response[0].c1[0].cluster;
+                        c2 = response[0].c2[0].cluster;
+                        $('#c0').append(c0);
+                        $('#c1').append(c1);
+                        $('#c2').append(c2);
+
+                        // pie chart
+                        donutData = {
+                            labels: [
+                                'Kurang Laris',
+                                'Laris',
+                                'Paling Laris',
+                            ],
+                            datasets: [{
+                                data: [c0, c1, c2],
+                                backgroundColor: ['rgba(70, 164, 211, 5)', 'rgba(10, 210, 129, 2)', 'rgba(255, 69, 0, 1.0)'],
+                            }]
+                        }
+
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                        var pieData = donutData;
+                        var pieOptions = {
+                            maintainAspectRatio: false,
+                            responsive: true,
+                        }
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        new Chart(pieChartCanvas, {
+                            type: 'pie',
+                            data: pieData,
+                            options: pieOptions
+                        })
+
+                        // table
+                        var kodeProduk = [];
+
+                        kodeProduk = response[0].kode_barang.map(kb => {
+                            return kb.kode_barang;
+                        });
+                        namaProduk = response[0].nama_barang.map(nb => {
+                            return nb.nama;
+                        });
+                        clusterProduk = response[0].cluster.map(nb => {
+                            return nb.cluster;
+                        });
+
+
+                        for (var i = 0; i < response[0].dataLength[0].length; i++) {
+                            // var oe = (i % 2 == 0) ? "odd" : "even";
+                            // var baris_baru = "<tr class=" + oe + "" + " ><td class='dtr-control sorting_1' tabindex='0'>" + kodeProduk[i] + " - " + namaProduk[i] + "</td><td>" + chartData[i].x + "</td><td>" + chartData[i].y + "</td><td>" + clusterProduk[i] + "</td></tr>";
+                            // $("#example2").append(baris_baru);
+                            dataLop = [
+                                kodeProduk[i] + " - " + namaProduk[i],
+                                chartData[i].x,
+                                chartData[i].y,
+                                clusterProduk[i]
+                            ]
+                            data.push(dataLop);
+
+                        }
+
+                        $('#example2').DataTable({
+                            "data": data,
+                            "paging": true,
+                            "lengthChange": true,
+                            "searching": true,
+                            "ordering": true,
+                            "info": true,
+                            "autoWidth": false,
+                            "responsive": true,
+                            "lengthMenu": [
+                                [10, 20, 50, -1],
+                                [10, 20, 50, "All"]
+                            ], // Menampilkan pilihan jumlah record per halaman
+                            "pageLength": 20 // Jumlah record per halaman yang akan ditampilkan secara default
+
+                        });
+                        // console.log(data);
 
                         // Memperbarui data dan warna pada chart
                         chart.data.datasets[0].data = chartData;
                         chart.data.datasets[0].backgroundColor = chartBackgroundColor;
-                        // // chart.data.datasets[0].data = response;
+                        // memperbaharui length data
+
                         chart.update();
                         // Memperbarui data dan warna pada chart
 
@@ -210,20 +322,14 @@
 
 
 
+
             // Pertama kali, memuat data untuk jenis file default
             var defaultFileType = $('#fileId').val();
+
             updateChart(defaultFileType);
 
 
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
+
 
         })
         // DropzoneJS Demo Code Start

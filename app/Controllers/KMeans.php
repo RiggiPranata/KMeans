@@ -12,12 +12,13 @@ class KMeans extends BaseController
     protected $builder;
     protected $clusters;
     protected $clusterModel;
-
+    protected $barang;
 
     public function __construct()
     {
         $db      = \Config\Database::connect();
         $this->builder = $db->table('clusters');
+        $this->barang = $db->table('barang');
         $this->uri = service('uri');
         $this->urisegments = $this->uri->getTotalSegments();
         $this->clusterModel = new \App\Models\ClusterModel();
@@ -129,8 +130,8 @@ class KMeans extends BaseController
         // Filter data hanya untuk kolom 'jumlah_transaksi' dan 'volume_penjualan'
         $data = array_map(function ($row) {
             return [
-                $row[1],
-                $row[2]
+                $row[2],
+                $row[3]
             ];
         }, $exl);
 
@@ -140,7 +141,23 @@ class KMeans extends BaseController
             ];
         }, $exl);
 
-        // dd($kodeBarang);
+        $tbl_barang = array_map(function ($row) {
+            return [
+                $row[0],
+                $row[1]
+            ];
+        }, $exl);
+
+        $barang = [];
+        foreach ($tbl_barang as $tb) {
+            $barang = [
+                "kode_barang" => $tb[0],
+                "nama" => $tb[1]
+            ];
+            // dd($barang);
+            $this->barang->insert($barang);
+        }
+
         // Inisialisasi jumlah cluster
         $numClusters = 3;
 
