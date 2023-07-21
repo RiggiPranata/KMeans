@@ -51,6 +51,13 @@
         .fa-user-circle {
             <?= (User()->activate()) ? 'color: #00FE00; ' : 'color: red;'; ?>
         }
+
+        #pieChart {
+            min-height: 250px;
+            height: 250px;
+            max-height: 250px;
+            max-width: 100%;
+        }
     </style>
 </head>
 <!--
@@ -190,6 +197,8 @@
                 }
             });
 
+
+
             // Event listener untuk perubahan pilihan jenis file
             $(document).ready(function() {
                 $('#fileId').change(function() {
@@ -198,6 +207,7 @@
                 });
             });
 
+            var existingChart;
             // Mendapatkan data dari server dan mengupdate chart
             function updateChart(fileType) {
                 $.ajax({
@@ -222,16 +232,86 @@
                             chartBackgroundColor.push(item.backgroundColor);
                         });
                         // jumlah data
+                        $('#countData').empty();
                         $('#countData').append(response[0].dataLength[0].length);
                         // jumlah data perklaster
-                        c0 = response[0].c0[0].cluster;
-                        c1 = response[0].c1[0].cluster;
-                        c2 = response[0].c2[0].cluster;
+                        c0 = null;
+                        c1 = null;
+                        c2 = null;
+                        c0 = Number(response[0].c0[0].cluster);
+                        c1 = Number(response[0].c1[0].cluster);
+                        c2 = Number(response[0].c2[0].cluster);
+                        $('#c0').empty();
+                        $('#c1').empty();
+                        $('#c2').empty();
                         $('#c0').append(c0);
                         $('#c1').append(c1);
                         $('#c2').append(c2);
 
                         // pie chart
+
+                        // Fungsi untuk membuat atau menginisialisasi chart
+                        function createChart(data) {
+                            // Hancurkan chart sebelumnya jika ada
+                            if (existingChart) {
+                                existingChart.destroy();
+                            }
+
+                            var pieOptions = {
+                                maintainAspectRatio: false,
+                                responsive: true,
+                                tooltips: {
+                                    enabled: false // Nonaktifkan tooltip
+                                },
+                                hover: {
+                                    mode: null // Nonaktifkan hover
+                                },
+                                legend: {
+                                    labels: {
+                                        generateLabels: function(chart) {
+                                            var data = chart.data;
+                                            if (data.labels.length && data.datasets.length) {
+                                                return data.labels.map(function(label, index) {
+                                                    var dataset = data.datasets[0];
+                                                    var currentValue = dataset.data[index];
+                                                    var total = dataset.data.reduce(function(previousValue, currentValue) {
+                                                        return previousValue + currentValue;
+                                                    });
+                                                    var percentage = ((currentValue / total) * 100).toFixed(2);
+                                                    return {
+                                                        text: label + ' - ' + currentValue + ' (' + percentage + '%)',
+                                                        fillStyle: dataset.backgroundColor[index],
+                                                        hidden: isNaN(dataset.data[index]), // Sembunyikan label jika datanya NaN
+                                                        lineCap: dataset.borderCapStyle,
+                                                        lineDash: dataset.borderDash,
+                                                        lineDashOffset: dataset.borderDashOffset,
+                                                        lineJoin: dataset.borderJoinStyle,
+                                                        lineWidth: dataset.borderWidth,
+                                                        strokeStyle: dataset.borderColor[index],
+                                                        pointStyle: dataset.pointStyle,
+                                                        rotation: dataset.rotation,
+                                                    };
+                                                });
+                                            }
+                                            return [];
+                                        }
+                                    }
+                                },
+                                onClick: null // Nonaktifkan klik
+                            };
+
+                            // Buat chart baru
+                            var pieChartCanvas = $('#pieChart').get(0).getContext('2d');
+                            existingChart = new Chart(pieChartCanvas, {
+                                type: 'pie',
+                                data: data,
+                                options: pieOptions,
+                            });
+                        }
+
+
+
+
                         donutData = {
                             labels: [
                                 'Kurang Laris',
@@ -241,23 +321,12 @@
                             datasets: [{
                                 data: [c0, c1, c2],
                                 backgroundColor: ['rgba(70, 164, 211, 5)', 'rgba(10, 210, 129, 2)', 'rgba(255, 69, 0, 1.0)'],
+                                borderColor: ['rgba(70, 164, 211, 1)', 'rgba(10, 210, 129, 1)', 'rgba(255, 69, 0, 1)'],
+                                borderWidth: 2, // Lebar garis
                             }]
                         }
 
-                        // Get context with jQuery - using jQuery's .get() method.
-                        var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-                        var pieData = donutData;
-                        var pieOptions = {
-                            maintainAspectRatio: false,
-                            responsive: true,
-                        }
-                        //Create pie or douhnut chart
-                        // You can switch between pie and douhnut using the method below.
-                        new Chart(pieChartCanvas, {
-                            type: 'pie',
-                            data: pieData,
-                            options: pieOptions
-                        })
+                        createChart(donutData);
 
                         // table
                         var kodeProduk = [];
@@ -272,11 +341,9 @@
                             return nb.cluster;
                         });
 
-
+                        data.splice(0, data.length);
                         for (var i = 0; i < response[0].dataLength[0].length; i++) {
-                            // var oe = (i % 2 == 0) ? "odd" : "even";
-                            // var baris_baru = "<tr class=" + oe + "" + " ><td class='dtr-control sorting_1' tabindex='0'>" + kodeProduk[i] + " - " + namaProduk[i] + "</td><td>" + chartData[i].x + "</td><td>" + chartData[i].y + "</td><td>" + clusterProduk[i] + "</td></tr>";
-                            // $("#example2").append(baris_baru);
+
                             dataLop = [
                                 kodeProduk[i] + " - " + namaProduk[i],
                                 chartData[i].x,
@@ -287,6 +354,7 @@
 
                         }
 
+                        $('#example2').DataTable().destroy();
                         $('#example2').DataTable({
                             "data": data,
                             "paging": true,
@@ -303,21 +371,26 @@
                             "pageLength": 20 // Jumlah record per halaman yang akan ditampilkan secara default
 
                         });
-                        // console.log(data);
 
                         // Memperbarui data dan warna pada chart
                         chart.data.datasets[0].data = chartData;
                         chart.data.datasets[0].backgroundColor = chartBackgroundColor;
-                        // memperbaharui length data
-
                         chart.update();
-                        // Memperbarui data dan warna pada chart
 
+
+                        // Memperbarui data dan warna pada chart
+                        existingChart.data.datasets[0].data = donutData.datasets[0].data;
+                        existingChart.data.datasets[0].backgroundColor = donutData.datasets[0].backgroundColor;
+                        existingChart.update();
                     },
                     error: function(xhr, status, error) {
                         console.log(xhr.responseText);
                     }
+
                 });
+
+
+
             }
 
 

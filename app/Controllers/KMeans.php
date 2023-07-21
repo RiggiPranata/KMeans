@@ -13,15 +13,18 @@ class KMeans extends BaseController
     protected $clusters;
     protected $clusterModel;
     protected $barang;
+    protected $barangModel;
+    protected $db;
 
     public function __construct()
     {
-        $db      = \Config\Database::connect();
-        $this->builder = $db->table('clusters');
-        $this->barang = $db->table('barang');
+        $this->db      = \Config\Database::connect();
+        $this->builder = $this->db->table('clusters');
+        $this->barang = $this->db->table('barang');
         $this->uri = service('uri');
         $this->urisegments = $this->uri->getTotalSegments();
         $this->clusterModel = new \App\Models\ClusterModel();
+        $this->barangModel = new \App\Models\BarangModel();
         date_default_timezone_set('Asia/Jakarta');
     }
 
@@ -151,11 +154,46 @@ class KMeans extends BaseController
         $barang = [];
         foreach ($tbl_barang as $tb) {
             $barang = [
-                "kode_barang" => $tb[0],
-                "nama" => $tb[1]
+                [
+                    "kode_barang" => $tb[0],
+                    "nama" => $tb[1]
+                ],
             ];
             // dd($barang);
-            $this->barang->insert($barang);
+        }
+        // dd($barang);
+        // Lakukan proses untuk mengecek dan mengganti data
+        foreach ($barang as $row) {
+            // dd($row['kode_barang']);
+            $kode_barang = $row['kode_barang'];
+
+            // Cek apakah data dengan kode_barang sudah ada di tabel barang
+            if ($this->barangModel->isDuplicate($kode_barang)) {
+                // Jika ada duplikasi, ambil data yang sudah ada di tabel
+                $existingData = $this->barangModel->getDataByKodeBarang($kode_barang);
+
+                // Tentukan kriteria untuk menghapus data duplikasi
+                // Misalnya, data dengan waktu update paling lama akan dihapus
+                $dataToDelete = $this->barangModel->getDataToDelete($kode_barang);
+
+                // Mulai transaksi database
+                $this->db->transStart();
+
+                // Hapus data duplikasi berdasarkan kriteria yang telah ditentukan
+                foreach ($dataToDelete as $dataR) {
+
+                    $this->barangModel->deleteData($dataR['kode_barang']);
+                }
+
+                // Simpan data baru ke tabel barang
+                $this->barangModel->insert($row);
+
+                // Selesai transaksi database
+                $this->db->transComplete();
+            } else {
+                // Jika tidak ada duplikasi, langsung simpan data baru ke tabel barang
+                $this->barangModel->insert($row);
+            }
         }
 
         // Inisialisasi jumlah cluster

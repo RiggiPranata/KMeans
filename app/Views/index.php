@@ -17,9 +17,9 @@
                                 <span class="text-bold text-lg"><span class="mr-1" id="countData"></span>Data</span>
                                 <span>Clustering</span>
                             </p>
-                            <div class="ml-auto d-flex flex-column">
-                                Pilih file :
-                                <select name="fileId" id="fileId">
+                            <div class="ml-auto d-flex flex-column pr-2">
+                                <label for="fileId" class="ml-3">Pilih file :</label>
+                                <select name="fileId" id="fileId" class="form-control custom-select ml-2 ">
                                     <?php foreach ($file as $f) : ?>
                                         <option value="<?= $f['file_id']; ?>"><?= $f['file_id']; ?></option>
                                     <?php endforeach; ?>
@@ -54,10 +54,10 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Pie Chart</h3>
+                        <h3 class="card-title">Presentase Clustering</h3>
                     </div>
-                    <div class="card-body">
-                        <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    <div class="card-body" id="contPiC">
+                        <canvas id="pieChart"></canvas>
                     </div>
                     <!-- /.card-body -->
                 </div>

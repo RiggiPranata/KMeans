@@ -1,0 +1,58 @@
+CRITICAL - 2023-07-21 03:37:32 --> Illegal string offset 'kode_barang'
+in APPPATH\Controllers\KMeans.php on line 164.
+ 1 APPPATH\Controllers\KMeans.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'kode_barang\'', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 164, [...])
+ 2 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-21 03:38:31 --> Undefined index: kode_barang
+in APPPATH\Controllers\KMeans.php on line 164.
+ 1 APPPATH\Controllers\KMeans.php(164): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: kode_barang', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 164, [...])
+ 2 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-21 03:41:29 --> Undefined index: id
+in APPPATH\Controllers\KMeans.php on line 184.
+ 1 APPPATH\Controllers\KMeans.php(184): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 184, [...])
+ 2 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-21 03:43:54 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\KMeans.php on line 288.
+ 1 APPPATH\Controllers\KMeans.php(288): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 288, [...])
+ 2 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-21 00:00:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:01:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:02:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-21 00:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
