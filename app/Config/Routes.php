@@ -36,7 +36,10 @@ $routes->post('/process-upload', 'KMeans::processUpload');
 $routes->get('/process-upload', 'KMeans::index');
 $routes->post('/clustering', 'Dashboard::graphCluster');
 $routes->get('/Profile', 'User::index');
-$routes->get('/Reset', 'Myth\Auth\Controllers\AuthController::resetPassword');
+$routes->get('/Master-data', 'FileMaster::index');
+$routes->get('/Master-data/(:any)', 'FileMaster::index/$1');
+$routes->get('/dataFile', 'FileMaster::getDataFile');
+$routes->get('/delete-data/(:any)', 'FileMaster::delete/$1');
 
 /*
  * --------------------------------------------------------------------

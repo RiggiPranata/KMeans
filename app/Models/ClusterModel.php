@@ -37,6 +37,11 @@ class ClusterModel extends Model
         return $data;
     }
 
+    public function AVGCluster($fileID, $kolom, $cluster)
+    {
+        $data = $this->selectAvg($kolom, $kolom . 'AVG' . $cluster)->where('file_id', $fileID)->where('cluster', $cluster)->findAll();
+        return $data;
+    }
 
     public function getDataByFileType($fileType)
     {
@@ -45,6 +50,22 @@ class ClusterModel extends Model
             ->where('file_id', $fileType)
             ->findAll();
 
+        return $query;
+    }
+
+    public function getAllIdByfile($fileID)
+    {
+        $query = $this->select('id')
+            ->where('file_id', $fileID)
+            ->findAll();
+
+        return $query;
+    }
+
+    public function getDataByFileID($fileID)
+    {
+        // Gantikan query berikut dengan query yang sesuai untuk mendapatkan data berdasarkan 'File_ID' dari tabel cluster
+        $query = $this->select("kode_barang,jumlah_transaksi,volume_penjualan")->where('file_id', $fileID)->findAll();
         return $query;
     }
 }

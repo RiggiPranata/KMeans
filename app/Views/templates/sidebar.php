@@ -48,6 +48,13 @@
                         <p>K-Means</p>
                     </a>
                 </li>
+                <li class="nav-header">MASTER DATA</li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/Master-data'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>Data File</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

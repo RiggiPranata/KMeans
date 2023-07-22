@@ -1,0 +1,175 @@
+ERROR - 2023-07-22 02:48:13 --> mysqli_sql_exception: Column 'volume_penjualan' cannot be null in D:\xampp\htdocs\KMeans\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\xampp\htdocs\KMeans\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cl...', 0)
+#1 D:\xampp\htdocs\KMeans\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 D:\xampp\htdocs\KMeans\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 D:\xampp\htdocs\KMeans\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 D:\xampp\htdocs\KMeans\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\xampp\htdocs\KMeans\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 D:\xampp\htdocs\KMeans\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\xampp\htdocs\KMeans\app\Controllers\KMeans.php(366): CodeIgniter\Model->insert(Array)
+#8 D:\xampp\htdocs\KMeans\app\Controllers\KMeans.php(61): App\Controllers\KMeans->saveClustersToDatabase(Array)
+#9 D:\xampp\htdocs\KMeans\system\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+#10 D:\xampp\htdocs\KMeans\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+#11 D:\xampp\htdocs\KMeans\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\xampp\htdocs\KMeans\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 D:\xampp\htdocs\KMeans\system\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2023-07-22 02:48:13 --> Column 'volume_penjualan' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `clusters` (`file_id`, `kode_barang`, `jumlah_transaksi`, `volume_penjualan`, `cluster`) VALUES (\'22-07-2023_02:48:13dataset_kcs.xlsx\', \'11678151787\', \'3\', NULL, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `clusters` (`file_id`, `kode_barang`, `jumlah_transaksi`, `volume_penjualan`, `cluster`) VALUES (\'22-07-2023_02:48:13dataset_kcs.xlsx\', \'11678151787\', \'3\', NULL, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clusters` (`file_id`, `kode_barang`, `jumlah_transaksi`, `volume_penjualan`, `cluster`) VALUES (\'22-07-2023_02:48:13dataset_kcs.xlsx\', \'11678151787\', \'3\', NULL, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clusters` (`file_id`, `kode_barang`, `jumlah_transaksi`, `volume_penjualan`, `cluster`) VALUES (:file_id:, :kode_barang:, :jumlah_transaksi:, :volume_penjualan:, :cluster:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\KMeans.php(366): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\KMeans.php(61): App\Controllers\KMeans->saveClustersToDatabase([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 03:23:27 --> array_unique() expects parameter 2 to be int, string given
+in APPPATH\Controllers\KMeans.php on line 279.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_unique() expects parameter 2 to be int, string given', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 279, [...])
+ 2 APPPATH\Controllers\KMeans.php(279): array_unique([...], 'SORT_NUMERIC')
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 03:29:28 --> Array to string conversion
+in APPPATH\Controllers\KMeans.php on line 287.
+ 1 APPPATH\Controllers\KMeans.php(287): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 287, [...])
+ 2 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 03:34:05 --> Only variables should be passed by reference
+in APPPATH\Controllers\KMeans.php on line 287.
+ 1 APPPATH\Controllers\KMeans.php(287): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 287, [...])
+ 2 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 3 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 03:44:05 --> array_map() expects parameter 1 to be a valid callback, function '8' not found or invalid function name
+in APPPATH\Controllers\KMeans.php on line 304.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_map() expects parameter 1 to be a valid callback, function \'8\' not found or invalid function name', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 304, [...])
+ 2 APPPATH\Controllers\KMeans.php(304): array_map('8', [...])
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 04:11:06 --> Array to string conversion
+in APPPATH\Controllers\KMeans.php on line 303.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 303, [...])
+ 2 APPPATH\Controllers\KMeans.php(303): array_unique([...])
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 04:11:51 --> Array to string conversion
+in APPPATH\Controllers\KMeans.php on line 303.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 303, [...])
+ 2 APPPATH\Controllers\KMeans.php(303): array_unique([...])
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 04:13:11 --> Array to string conversion
+in APPPATH\Controllers\KMeans.php on line 303.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 303, [...])
+ 2 APPPATH\Controllers\KMeans.php(303): array_unique([...])
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 04:13:47 --> Array to string conversion
+in APPPATH\Controllers\KMeans.php on line 303.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 303, [...])
+ 2 APPPATH\Controllers\KMeans.php(303): array_unique([...])
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+CRITICAL - 2023-07-22 04:15:36 --> Array to string conversion
+in APPPATH\Controllers\KMeans.php on line 303.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\KMeans.php', 303, [...])
+ 2 APPPATH\Controllers\KMeans.php(303): array_unique([...])
+ 3 APPPATH\Controllers\KMeans.php(203): App\Controllers\KMeans->initializeCentroids([...], 3)
+ 4 APPPATH\Controllers\KMeans.php(57): App\Controllers\KMeans->kMeansClustering(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\KMeans->processUpload()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KMeans))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-22 00:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-22 00:44:09 --> syntax error, unexpected '<'
+in APPPATH\Controllers\Dashboard.php on line 85.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs\\KMeans\\app\\Controllers\\Dashboard.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Dashboard')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Dashboard')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Dashboard')
+ 5 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\Dashboard', true)
+ 6 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\KMeans\\public\\index.php')
+INFO - 2023-07-22 00:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:45:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:50:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:50:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-22 00:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

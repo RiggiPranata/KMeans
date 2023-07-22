@@ -43,14 +43,12 @@
         .dataTables_info {
             margin-left: 20px;
             margin-bottom: 10px;
-
-
-
         }
 
         .fa-user-circle {
             <?= (User()->activate()) ? 'color: #00FE00; ' : 'color: red;'; ?>
         }
+
 
         #pieChart {
             min-height: 250px;
@@ -159,6 +157,7 @@
         var hasil
         var data = [];
         var donutData = {};
+        // script dashboard
         $(function() {
             // Inisialisasi chart dan konfigurasi
             var ctx = document.getElementById('visitors-chart').getContext('2d');
@@ -393,18 +392,97 @@
 
             }
 
-
-
-
             // Pertama kali, memuat data untuk jenis file default
             var defaultFileType = $('#fileId').val();
 
             updateChart(defaultFileType);
 
-
-
-
         })
+
+        // script alert master data
+        $(document).ready(function() {
+            $('.delData').on('click', function(event) {
+                event.preventDefault(); // Mencegah tindakan default dari anchor link
+
+                var konfirmasi = confirm('Anda yakin ingin menghapus data ini?');
+                if (konfirmasi) {
+                    // Lanjutkan ke URL href anchor link jika konfirmasi disetujui
+                    var href = $(this).attr('href');
+                    window.location.href = href;
+                }
+            });
+        });
+
+
+        // script master datatable
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true
+            });
+
+            // Handle row expansion
+            $('#example tbody').on('click', 'td', function() {
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
+
+                // Check if the row is already expanded, if so, collapse it
+                if (row.child.isShown()) {
+                    row.child.hide();
+                    tr.removeClass('shown');
+                } else {
+                    // Get the data from the row and create the expanded content
+                    var rowData = row.data();
+                    var fullString = rowData[1]; // Assuming 'File_ID' is in the second column (index 1)
+
+                    // Mencari posisi tanda hubung ("-")
+                    var dashIndex = fullString.lastIndexOf('-');
+
+                    // Mendapatkan string sebelum tanda hubung sebagai nama file yang diinginkan
+                    var fileID = fullString.slice(0, dashIndex).trim();
+                    console.log(fileID);
+
+                    // Fetch data for 'Kode_Barang', 'Jumlah_Transaksi', and 'Volume_Penjualan' based on 'File_ID' using AJAX
+                    $.ajax({
+                        url: '/dataFile', // Ganti dengan URL sesuai dengan rute yang sesuai
+                        type: 'GET',
+                        dataType: 'json',
+                        data: {
+                            fileID: fileID
+                        },
+                        success: function(response) {
+                            // Format data tambahan sesuai dengan kolom tabel yang diinginkan
+                            var expandedContent = '<table class="table table-bordered"';
+                            expandedContent += '<thead><tr><th>Kode Barang</th><th>Jumlah Transaksi</th><th>Volume Penjualan</th></tr></thead>';
+                            expandedContent += '<tbody>';
+                            response.forEach(function(item) {
+                                expandedContent += '<tr>';
+                                expandedContent += '<td>' + item.kode_barang + '</td>';
+                                expandedContent += '<td>' + item.jumlah_transaksi + '</td>';
+                                expandedContent += '<td>' + item.volume_penjualan + '</td>';
+                                expandedContent += '</tr>';
+                            });
+                            expandedContent += '</tbody>';
+                            expandedContent += '</table>';
+
+                            // Tampilkan data tambahan
+                            row.child(expandedContent).show();
+                            tr.addClass('shown');
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                }
+            });
+        });
+
+
         // DropzoneJS Demo Code Start
         Dropzone.autoDiscover = false
 

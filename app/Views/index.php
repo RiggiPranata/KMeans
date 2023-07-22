@@ -75,6 +75,7 @@
                     <hr>
                     <div class="card-body table-responsive p-0">
                         <p class="ml-4">Cluster 0/Kurang Laris : <span id="c0"></span></p>
+
                         <p class="ml-4">Cluster 1/Laris : <span id="c1"></span></p>
                         <p class="ml-4">Cluster 2/Paling Laris : <span id="c2"></span></p>
                         <table id="example2" class="table table-bordered table-hover">

@@ -211,6 +211,7 @@ class KMeans extends BaseController
         while ($iteration < $maxIterations) {
             $clusters = $this->assignDataToClusters($data, $centroids);
             $newCentroids = $this->calculateNewCentroids($clusters, $data);
+            // dd($centroids, $newCentroids);
             // Jika centroid tidak berubah, hentikan iterasi
             if ($this->isEqual($centroids, $newCentroids)) {
 
@@ -276,23 +277,56 @@ class KMeans extends BaseController
         $centroids = [];
 
         // Mendapatkan data unik untuk kolom 'jumlah_transaksi'
-        $uniqueJumlahTransaksi = array_unique(array_column($data, 0));
+        $uniqueJumlahTransaksi = array_unique(array_column($data, 0), SORT_NUMERIC);
 
         // Mengambil 3 nilai unik terbesar dari 'jumlah_transaksi'
-        sort($uniqueJumlahTransaksi);
         shuffle($uniqueJumlahTransaksi);
-        $selectedJumlahTransaksi = array_slice($uniqueJumlahTransaksi, 4, $numClusters);
+        $selectedJumlahTransaksi = [];
+        sort($uniqueJumlahTransaksi);
+        $minSelectedJumlahTransaksi = array_slice($uniqueJumlahTransaksi, 4, 1);
+        $selectedJumlahTransaksi = array_merge($selectedJumlahTransaksi, $minSelectedJumlahTransaksi);
+
+        rsort($uniqueJumlahTransaksi);
+        $uniqueJumlahTransaksiMax = array_slice($uniqueJumlahTransaksi, 0, 20);
+        shuffle($uniqueJumlahTransaksiMax);
+        sort($uniqueJumlahTransaksiMax);
+        $midSelectedJumlahTransaksi = array_slice($uniqueJumlahTransaksiMax, 4, 1);
+        $selectedJumlahTransaksi = array_merge($selectedJumlahTransaksi, $midSelectedJumlahTransaksi);
+
+        rsort($uniqueJumlahTransaksiMax);
+        $maxSelectedJumlahTransaksi = array_slice($uniqueJumlahTransaksiMax, 4, 1);
+        $selectedJumlahTransaksi = array_merge($selectedJumlahTransaksi, $maxSelectedJumlahTransaksi);
+
+
+
 
         // Mengambil data dengan nilai 'jumlah_transaksi' yang sesuai
+        sort($data);
         foreach ($data as $row) {
             if (in_array($row[0], $selectedJumlahTransaksi)) {
-                $centroids[] = [$row[0], $row[1]];
+                // Jika nilai $row[0] sudah ada di $selectedJumlahTransaksi, maka cek apakah nilai tersebut sudah ada di centroids[]
+                $found = false;
+                foreach ($centroids as $centroid) {
+                    if ($centroid[0] === $row[0]) {
+                        // Jika nilai sudah ada di centroids[], set $found menjadi true
+                        $found = true;
+                        break;
+                    }
+                }
+
+                // Jika nilai belum ada di centroids[], tambahkan ke centroids[]
+                if (!$found) {
+                    $centroids[] = [$row[0], $row[1]];
+                }
             }
+
+            // Jika jumlah data di centroids[] sudah mencapai 3, berhenti dari perulangan
             $jml = count($centroids);
             if ($jml == 3) {
                 break;
             }
         }
+        // dd($data, $row, $centroids, $uniqueJumlahTransaksi, $uniqueJumlahTransaksiMax, $selectedJumlahTransaksi);
         return $centroids;
     }
 
@@ -335,7 +369,7 @@ class KMeans extends BaseController
                 'volume_penjualan' => $data[$index][1]
             ];
         }
-
+        // sort($clusterData);
         foreach ($clusterData as $data) {
             $numData = count($data);
             $sumTransaksi = 0;
@@ -353,7 +387,7 @@ class KMeans extends BaseController
 
             $newCentroids[] = [$meanTransaksi, $meanVolume];
         }
-
+        // dd($newCentroids, $clusters, $clusterData, $meanTransaksi, $meanVolume);
         return $newCentroids;
     }
 
