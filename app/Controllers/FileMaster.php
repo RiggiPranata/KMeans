@@ -41,6 +41,7 @@ class FileMaster extends BaseController
         // Panggil model untuk mendapatkan data berdasarkan 'File_ID'
         $data = $this->kmeans->getDataByFileID($fileID);
         // Kirim data dalam format JSON
+
         if ($data) {
             echo json_encode($data);
         } else {

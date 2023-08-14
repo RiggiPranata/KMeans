@@ -65,7 +65,7 @@ class ClusterModel extends Model
     public function getDataByFileID($fileID)
     {
         // Gantikan query berikut dengan query yang sesuai untuk mendapatkan data berdasarkan 'File_ID' dari tabel cluster
-        $query = $this->select("kode_barang,jumlah_transaksi,volume_penjualan")->where('file_id', $fileID)->findAll();
+        $query = $this->select("clusters.kode_barang,nama,jumlah_transaksi,volume_penjualan")->where('file_id', $fileID)->join('barang', 'clusters.kode_barang = barang.kode_barang')->findAll();
         return $query;
     }
 }

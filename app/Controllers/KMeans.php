@@ -59,6 +59,7 @@ class KMeans extends BaseController
             // dd($this->clusters);
             // Simpan hasil perhitungan ke database
             $this->saveClustersToDatabase($this->clusters);
+
             $fileID = $this->clusterModel->orderBy('file_id', 'DESC')->limit(1)->findColumn('file_id');
 
 
@@ -153,13 +154,10 @@ class KMeans extends BaseController
 
         $barang = [];
         foreach ($tbl_barang as $tb) {
-            $barang = [
-                [
-                    "kode_barang" => $tb[0],
-                    "nama" => $tb[1]
-                ],
+            $barang[] = [
+                "kode_barang" => $tb[0],
+                "nama" => $tb[1]
             ];
-            // dd($barang);
         }
         // dd($barang);
         // Lakukan proses untuk mengecek dan mengganti data
@@ -206,12 +204,12 @@ class KMeans extends BaseController
         $iteration = 0;
         $maxIterations = 10;
 
-        // dd($data, $centroids);
+        // dd($centroids);
         // Mulai iterasi perhitungan k-means clustering
         while ($iteration < $maxIterations) {
             $clusters = $this->assignDataToClusters($data, $centroids);
             $newCentroids = $this->calculateNewCentroids($clusters, $data);
-            // dd($centroids, $newCentroids);
+            // d($centroids);
             // Jika centroid tidak berubah, hentikan iterasi
             if ($this->isEqual($centroids, $newCentroids)) {
 
@@ -344,7 +342,7 @@ class KMeans extends BaseController
 
             for ($j = 0; $j < count($centroids); $j++) {
                 $distance = sqrt(pow(($data[$i][0] - $centroids[$j][0]), 2) + pow(($data[$i][1] - $centroids[$j][1]), 2));
-
+                // d($data[$i][0], $centroids[$j][0], $data[$i][1], $centroids[$j][1], pow(($data[$i][0] - $centroids[$j][0]), 2), pow(($data[$i][1] - $centroids[$j][1]), 2), $distance);
                 if ($distance < $minDistance) {
                     $minDistance = $distance;
                     $closestCentroid = $j;
@@ -353,6 +351,7 @@ class KMeans extends BaseController
 
             $clusters[$i] = $closestCentroid;
         }
+
 
         return $clusters;
     }

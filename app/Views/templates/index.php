@@ -56,6 +56,31 @@
             max-height: 250px;
             max-width: 100%;
         }
+
+        /* Gaya untuk tombol Scroll to Top */
+        .scroll-top-button {
+            position: fixed;
+            bottom: 50vh;
+            right: 20px;
+            z-index: 999;
+            opacity: 0.4;
+            transition: opacity 0.3s ease-in-out;
+            display: none;
+            /* Transisi untuk efek fade */
+
+        }
+
+        .scroll-top-button button {
+            border-radius: 50%;
+            /* Membuat tombol menjadi bulat */
+        }
+
+        .scroll-top-btn {
+            background-color: #343a40;
+            /* Ganti dengan hex warna yang Anda inginkan */
+            color: #fff;
+            /* Warna teks */
+        }
     </style>
 </head>
 <!--
@@ -105,6 +130,11 @@
 
             <!-- Main content -->
             <?= $this->renderSection('pages-content') ?>
+            <div class="scroll-top-button">
+                <button id="scrollTopBtn" class="btn btn-floating btn-lg scroll-top-btn  ">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
 
 
             <!-- /.content -->
@@ -116,6 +146,8 @@
             <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->
+
+
 
         <!-- Main Footer -->
         <?= $this->include('templates/footer'); ?>
@@ -413,6 +445,29 @@
             });
         });
 
+        // scroll up
+        $(document).ready(function() {
+            const scrollTopButton = document.querySelector('.scroll-top-button');
+            window.addEventListener('scroll', toggleScrollTopButton);
+
+            // Fungsi untuk mengatur visibilitas tombol berdasarkan posisi scroll
+            function toggleScrollTopButton() {
+                if (window.scrollY > 0) {
+                    scrollTopButton.style.display = 'block';
+                } else {
+                    scrollTopButton.style.display = 'none';
+                }
+            }
+            // Mengatur aksi tombol ketika diklik
+            $("#scrollTopBtn").click(function() {
+                // Animasikan scroll ke atas halaman
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+                return false;
+            });
+
+        });
 
         // script master datatable
         $(document).ready(function() {
@@ -445,7 +500,7 @@
 
                     // Mendapatkan string sebelum tanda hubung sebagai nama file yang diinginkan
                     var fileID = fullString.slice(0, dashIndex).trim();
-                    console.log(fileID);
+                    // console.log(fileID);
 
                     // Fetch data for 'Kode_Barang', 'Jumlah_Transaksi', and 'Volume_Penjualan' based on 'File_ID' using AJAX
                     $.ajax({
@@ -458,11 +513,13 @@
                         success: function(response) {
                             // Format data tambahan sesuai dengan kolom tabel yang diinginkan
                             var expandedContent = '<table class="table table-bordered"';
-                            expandedContent += '<thead><tr><th>Kode Barang</th><th>Jumlah Transaksi</th><th>Volume Penjualan</th></tr></thead>';
+                            expandedContent += '<thead><tr><th>Kode Barang</th><th>Nama</th><th>Jumlah Transaksi</th><th>Volume Penjualan</th></tr></thead>';
                             expandedContent += '<tbody>';
                             response.forEach(function(item) {
+                                console.log(item);
                                 expandedContent += '<tr>';
                                 expandedContent += '<td>' + item.kode_barang + '</td>';
+                                expandedContent += '<td>' + item.nama + '</td>';
                                 expandedContent += '<td>' + item.jumlah_transaksi + '</td>';
                                 expandedContent += '<td>' + item.volume_penjualan + '</td>';
                                 expandedContent += '</tr>';

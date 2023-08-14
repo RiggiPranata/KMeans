@@ -9,7 +9,9 @@ class BarangModel extends Model
     protected $table = 'barang';
     protected $primaryKey = 'kode_barang';
     protected $created_at = true;
-    protected $allowedFields = ['kode_barang', 'nama_barang'];
+    protected $updated_at = true;
+    protected $useTimestamps = true;
+    protected $allowedFields = ['kode_barang', 'nama', 'created_at', 'updated_at'];
 
     // Fungsi untuk mengecek duplikasi data berdasarkan kode_barang
     public function isDuplicate($kode_barang)
